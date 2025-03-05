@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 """
 We provide this file as an example of how to use the LogisticRegressor class
 with the NSCLC dataset. You can use this both to test your implementation
@@ -35,9 +39,9 @@ def main():
 
     # For testing purposes, once you've added your code.
     # CAUTION: hyperparameters have not been optimized.
-    # log_model = logreg.LogisticRegressor(num_feats=6, learning_rate=0.00001, tol=0.01, max_iter=10, batch_size=10)
-    # log_model.train_model(X_train, y_train, X_val, y_val)
-    # log_model.plot_loss_history()
+    log_model = logreg.LogisticRegressor(num_feats=6, learning_rate=0.1, tol=0.0001, max_iter=100, batch_size=150)
+    log_model.train_model(X_train, y_train, X_val, y_val)
+    log_model.plot_loss_history()
 
 # Run main function if run as script
 if __name__ == "__main__":
